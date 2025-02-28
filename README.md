@@ -14,7 +14,7 @@ This module allows you to import content you own on D&D Beyond into Foundry VTT 
 
 1. In Foundry VTT, navigate to the "Add-on Modules" tab
 2. Click "Install Module"
-3. Enter the following URL in the "Manifest URL" field: `https://raw.githubusercontent.com/yourusername/dndbeyond-importer/main/module.json`
+3. Enter the following URL in the "Manifest URL" field: `https://raw.githubusercontent.com/sfatkhutdinov/foundry-extension/main/module.json`
 4. Click "Install"
 
 ## Usage
@@ -40,7 +40,7 @@ This module never stores your D&D Beyond credentials. The Cobalt cookie is only 
 
 ## Support
 
-If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/yourusername/dndbeyond-importer/issues) on GitHub.
+If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/sfatkhutdinov/foundry-extension/issues) on GitHub.
 
 ## License
 
