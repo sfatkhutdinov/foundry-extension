@@ -1,0 +1,126 @@
+/**
+ * D&D Beyond Content Importer
+ * Module styles
+ */
+
+/* Import Dialog */
+.dndbeyond-import {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e40712;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dndbeyond-import:hover {
+  background-color: #c20610;
+}
+
+.dndbeyond-import i {
+  margin-right: 5px;
+}
+
+/* Content List */
+.content-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.content-list h3 {
+  margin: 10px 0 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.content-category {
+  margin-bottom: 15px;
+}
+
+.content-item {
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 3px;
+}
+
+.content-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Character List */
+.character-list {
+  margin-top: 10px;
+}
+
+.fetch-characters {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fetch-characters:hover {
+  background-color: #333;
+}
+
+.fetch-characters i {
+  margin-right: 5px;
+}
+
+/* Progress Dialog */
+.import-progress {
+  padding: 10px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #e40712;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.progress-log {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.progress-log p {
+  margin: 2px 0;
+  padding: 2px 5px;
+}
+
+.progress-log p:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+} 

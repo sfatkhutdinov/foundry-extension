@@ -1,0 +1,66 @@
+<form id="dndbeyond-import-form">
+  <p>Select the content you wish to import from D&D Beyond:</p>
+  
+  <div class="form-group">
+    <label>Import Options:</label>
+    <div class="form-fields">
+      <label class="checkbox">
+        <input type="checkbox" name="overwrite" data-dtype="Boolean">
+        <span>Overwrite existing content</span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="content-list">
+    {{#if adventures.length}}
+    <h3>Adventures</h3>
+    <div class="content-category">
+      {{#each adventures}}
+      <div class="content-item">
+        <label class="checkbox">
+          <input type="checkbox" name="content" value="{{this.id}}" data-type="adventure">
+          <span>{{this.name}}</span>
+        </label>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    
+    {{#if sourcebooks.length}}
+    <h3>Sourcebooks</h3>
+    <div class="content-category">
+      {{#each sourcebooks}}
+      <div class="content-item">
+        <label class="checkbox">
+          <input type="checkbox" name="content" value="{{this.id}}" data-type="sourcebook">
+          <span>{{this.name}}</span>
+        </label>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    
+    {{#if homebrew.length}}
+    <h3>Homebrew</h3>
+    <div class="content-category">
+      {{#each homebrew}}
+      <div class="content-item">
+        <label class="checkbox">
+          <input type="checkbox" name="content" value="{{this.id}}" data-type="homebrew">
+          <span>{{this.name}}</span>
+        </label>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    
+    <h3>Characters</h3>
+    <div class="content-category">
+      <p>Import your characters from D&D Beyond:</p>
+      <button type="button" id="fetch-characters" class="fetch-characters">
+        <i class="fas fa-users"></i> Fetch My Characters
+      </button>
+      <div id="character-list" class="character-list"></div>
+    </div>
+  </div>
+</form> 

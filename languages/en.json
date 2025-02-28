@@ -1,0 +1,57 @@
+{
+  "dndbeyond-importer": {
+    "settings": {
+      "cobaltCookie": {
+        "name": "D&D Beyond Cobalt Cookie",
+        "hint": "Your D&D Beyond CobaltSession cookie value for authentication. This is stored locally and never shared."
+      },
+      "importPath": {
+        "name": "Import Path",
+        "hint": "The path where imported content will be stored"
+      },
+      "debugMode": {
+        "name": "Debug Mode",
+        "hint": "Enable debug logging for troubleshooting"
+      }
+    },
+    "dialog": {
+      "import": {
+        "title": "Import from D&D Beyond",
+        "content": "Select the content you wish to import from D&D Beyond:",
+        "importButton": "Import Selected",
+        "cancelButton": "Cancel",
+        "overwriteOption": "Overwrite existing content",
+        "noContentSelected": "No content selected for import."
+      },
+      "progress": {
+        "title": "Importing from D&D Beyond",
+        "preparing": "Preparing to import...",
+        "importing": "Importing content from D&D Beyond...",
+        "completed": "Import completed!",
+        "cancelled": "Import cancelled.",
+        "itemsImported": "{completed}/{total} items imported ({failed} failed)"
+      }
+    },
+    "contentTypes": {
+      "adventure": "Adventure",
+      "sourcebook": "Sourcebook",
+      "homebrew": "Homebrew Content",
+      "character": "Character"
+    },
+    "notifications": {
+      "authSuccess": "D&D Beyond authentication successful!",
+      "authFailed": "D&D Beyond authentication failed. Please check your Cobalt cookie.",
+      "authError": "D&D Beyond authentication error. See console for details.",
+      "fetchContentError": "Failed to fetch content from D&D Beyond. See console for details.",
+      "fetchCharactersError": "Failed to fetch characters from D&D Beyond.",
+      "noCharactersFound": "No characters found on your D&D Beyond account.",
+      "importInProgress": "An import is already in progress."
+    },
+    "errors": {
+      "noAuth": "You must authenticate with D&D Beyond first. Please enter your Cobalt cookie in the module settings.",
+      "noCookie": "No Cobalt cookie available for authentication",
+      "contentExists": "{type} already exists and overwrite is disabled",
+      "fetchFailed": "Failed to fetch {type} data: {status}"
+    }
+  }
+} 
