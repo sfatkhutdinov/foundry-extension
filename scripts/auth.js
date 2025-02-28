@@ -14,7 +14,7 @@ export class DnDBeyondAuth {
    * Initialize the authentication module
    */
   async initialize() {
-    this.cobaltCookie = game.settings.get('dndbeyond-importer', 'cobaltCookie');
+    this.cobaltCookie = globalThis.game.settings.get('dndbeyond-importer', 'cobaltCookie');
     if (this.cobaltCookie) {
       await this.validateCookie(this.cobaltCookie);
     }

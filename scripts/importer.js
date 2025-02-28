@@ -21,7 +21,7 @@ export class DnDBeyondImporter {
    */
   async openImportDialog() {
     // Check if authenticated
-    if (!game.dndbeyondImporter.auth.isAuthenticated) {
+    if (!globalThis.game.dndbeyondImporter.auth.isAuthenticated) {
       ui.notifications.error('You must authenticate with D&D Beyond first. Please enter your Cobalt cookie in the module settings.');
       this.openSettingsDialog();
       return;
@@ -29,7 +29,7 @@ export class DnDBeyondImporter {
 
     try {
       // Fetch available content
-      const content = await game.dndbeyondImporter.auth.getUserContent();
+      const content = await globalThis.game.dndbeyondImporter.auth.getUserContent();
       
       // Create dialog content
       const dialogContent = await this.createImportDialogContent(content);
@@ -63,7 +63,7 @@ export class DnDBeyondImporter {
    * Open the module settings dialog
    */
   openSettingsDialog() {
-    game.settings.sheet.render(true);
+    globalThis.game.settings.sheet.render(true);
     // Focus on the module's tab
     setTimeout(() => {
       const tab = document.querySelector('.settings-list .item[data-tab="modules"]');
@@ -186,7 +186,7 @@ export class DnDBeyondImporter {
    */
   async fetchAndDisplayCharacters(html) {
     try {
-      const response = await game.dndbeyondImporter.auth.makeAuthenticatedRequest('https://www.dndbeyond.com/api/user/characters');
+      const response = await globalThis.game.dndbeyondImporter.auth.makeAuthenticatedRequest('https://www.dndbeyond.com/api/user/characters');
       
       if (response.status === 200) {
         const data = await response.json();
@@ -382,7 +382,7 @@ export class DnDBeyondImporter {
     this.updateProgressDialog(100, 'Import completed!');
     
     // Update the last import timestamp
-    game.settings.set('dndbeyond-importer', 'lastImport', new Date().toISOString());
+    globalThis.game.settings.set('dndbeyond-importer', 'lastImport', new Date().toISOString());
     
     // Change the dialog buttons
     if (this.progressDialog) {
@@ -456,7 +456,7 @@ export class DnDBeyondImporter {
     const name = `adventure-${id}`;
     
     // Check if the compendium already exists
-    const existingPack = game.packs.find(p => p.metadata.name === name);
+    const existingPack = globalThis.game.packs.find(p => p.metadata.name === name);
     
     if (existingPack && !overwrite) {
       throw new Error('Adventure already exists and overwrite is disabled');
@@ -475,7 +475,7 @@ export class DnDBeyondImporter {
         label,
         path: `packs/${name}.db`,
         private: false,
-        system: game.system.id,
+        system: globalThis.game.system.id,
         type: 'Adventure'
       });
     }
@@ -538,7 +538,7 @@ export class DnDBeyondImporter {
     
     try {
       // Fetch character data from D&D Beyond
-      const response = await game.dndbeyondImporter.auth.makeAuthenticatedRequest(`https://www.dndbeyond.com/api/character/${id}/json`);
+      const response = await globalThis.game.dndbeyondImporter.auth.makeAuthenticatedRequest(`https://www.dndbeyond.com/api/character/${id}/json`);
       
       if (response.status !== 200) {
         throw new Error(`Failed to fetch character data: ${response.status}`);
@@ -547,7 +547,7 @@ export class DnDBeyondImporter {
       const characterData = await response.json();
       
       // Check if character already exists
-      const existingActor = game.actors.find(a => a.getFlag('dndbeyond-importer', 'characterId') === id);
+      const existingActor = globalThis.game.actors.find(a => a.getFlag('dndbeyond-importer', 'characterId') === id);
       
       if (existingActor && !overwrite) {
         throw new Error('Character already exists and overwrite is disabled');

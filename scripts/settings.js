@@ -5,7 +5,7 @@
 
 export function registerSettings() {
   // Register module settings
-  game.settings.register('dndbeyond-importer', 'cobaltCookie', {
+  globalThis.game.settings.register('dndbeyond-importer', 'cobaltCookie', {
     name: 'D&D Beyond Cobalt Cookie',
     hint: 'Your D&D Beyond CobaltSession cookie value for authentication. This is stored locally and never shared.',
     scope: 'world',
@@ -14,13 +14,13 @@ export function registerSettings() {
     default: '',
     onChange: value => {
       // Validate the cookie when it changes
-      if (game.dndbeyondImporter && game.dndbeyondImporter.auth) {
-        game.dndbeyondImporter.auth.validateCookie(value);
+      if (globalThis.game.dndbeyondImporter && globalThis.game.dndbeyondImporter.auth) {
+        globalThis.game.dndbeyondImporter.auth.validateCookie(value);
       }
     }
   });
 
-  game.settings.register('dndbeyond-importer', 'importPath', {
+  globalThis.game.settings.register('dndbeyond-importer', 'importPath', {
     name: 'Import Path',
     hint: 'The path where imported content will be stored',
     scope: 'world',
@@ -32,7 +32,7 @@ export function registerSettings() {
     }
   });
 
-  game.settings.register('dndbeyond-importer', 'lastImport', {
+  globalThis.game.settings.register('dndbeyond-importer', 'lastImport', {
     name: 'Last Import',
     hint: 'Timestamp of the last successful import',
     scope: 'world',
@@ -41,7 +41,7 @@ export function registerSettings() {
     default: ''
   });
 
-  game.settings.register('dndbeyond-importer', 'debugMode', {
+  globalThis.game.settings.register('dndbeyond-importer', 'debugMode', {
     name: 'Debug Mode',
     hint: 'Enable debug logging for troubleshooting',
     scope: 'world',

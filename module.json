@@ -1,15 +1,26 @@
 {
-  "name": "dndbeyond-importer",
+  "id": "dndbeyond-importer",
   "title": "D&D Beyond Content Importer",
   "description": "Import your D&D Beyond content into Foundry VTT using Cobalt cookies for authentication",
   "version": "0.1.0",
-  "author": "Stanislav Fatkhutdinov",
-  "minimumCoreVersion": "0.8.0",
-  "compatibleCoreVersion": "12",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "12",
+    "maximum": "12"
+  },
+  "authors": [
+    {
+      "name": "Stanislav Fatkhutdinov",
+      "url": "https://github.com/sfatkhutdinov"
+    }
+  ],
   "scripts": [
     "scripts/dndbeyond-importer.js",
     "scripts/auth.js",
     "scripts/importer.js"
+  ],
+  "esmodules": [
+    "scripts/index.js"
   ],
   "styles": [
     "styles/dndbeyond-importer.css"
@@ -28,7 +39,8 @@
   "license": "MIT",
   "readme": "README.md",
   "bugs": "https://github.com/sfatkhutdinov/foundry-extension/issues",
-  "esmodules": [
-    "scripts/index.js"
-  ]
+  "socket": false,
+  "relationships": {
+    "requires": []
+  }
 } 
